@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "377430172128",
+    "project_id": "artopsy-b5119",
+    "storage_bucket": "artopsy-b5119.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377430172128:android:694713f71f19f5a373cb85",
+        "android_client_info": {
+          "package_name": "com.example.artopsy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLxbMEbjEXSZjD4iCT7W6tu8Xsa4--1CU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
