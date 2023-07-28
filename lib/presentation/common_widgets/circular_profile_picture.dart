@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../bloc/users/user/user_bloc.dart';
+import '../../application/users/user/user_bloc.dart';
 
 class CircularProfilePicture extends StatelessWidget {
   const CircularProfilePicture({

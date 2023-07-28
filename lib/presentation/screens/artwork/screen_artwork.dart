@@ -10,9 +10,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:share_plus/share_plus.dart';
 
-import '../../../bloc/favourites/favourites_bloc.dart';
-import '../../../bloc/my_cart/my_cart_bloc.dart';
-import '../../../bloc/users/visiting_user/visiting_user_bloc.dart';
+import '../../../application/favourites/favourites_bloc.dart';
+import '../../../application/my_cart/my_cart_bloc.dart';
+import '../../../application/users/visiting_user/visiting_user_bloc.dart';
 import '../../../core/colors/colors.dart';
 import '../../../core/list/list.dart';
 import '../../../domain/models/artwork_details.dart';

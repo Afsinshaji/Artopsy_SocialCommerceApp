@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:insta_assets_picker/insta_assets_picker.dart';
 
-import '../../../bloc/users/user/user_bloc.dart';
+import '../../../application/users/user/user_bloc.dart';
 import '../../../core/constants/constants.dart';
 import '../../../infrastructure/artwork/add_artwork.dart';
 import '../../../domain/models/user_profile.dart';

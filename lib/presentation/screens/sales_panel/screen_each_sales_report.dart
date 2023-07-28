@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../bloc/sales/sales_bloc.dart';
+import '../../../application/sales/sales_bloc.dart';
 import '../../../core/colors/colors.dart';
 import '../../../core/constants/constants.dart';
 import '../../../infrastructure/wallet/wallet.dart';

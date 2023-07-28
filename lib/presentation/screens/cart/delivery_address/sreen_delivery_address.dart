@@ -1,4 +1,4 @@
-import 'package:artopsy/bloc/delivery_address/delivery_address_bloc.dart';
+import 'package:artopsy/application/delivery_address/delivery_address_bloc.dart';
 import 'package:artopsy/presentation/screens/cart/delivery_address/widgets/delivery_bottom_sheet.dart';
 import 'package:artopsy/presentation/screens/cart/payment/screen_payment.dart';
 import 'package:artopsy/presentation/screens/delivery_address/screen_add_delivery_address.dart';
@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../bloc/delivery_bottom_sheet/delivery_bottom_sheet_bloc.dart';
-import '../../../../bloc/my_cart/my_cart_bloc.dart';
+import '../../../../application/delivery_bottom_sheet/delivery_bottom_sheet_bloc.dart';
+import '../../../../application/my_cart/my_cart_bloc.dart';
 import '../../../../core/colors/colors.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../domain/models/shopping_address.dart';

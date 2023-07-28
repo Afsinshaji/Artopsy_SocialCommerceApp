@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../bloc/delivery_address/delivery_address_bloc.dart';
+import '../../../application/delivery_address/delivery_address_bloc.dart';
 import '../../../core/colors/colors.dart';
 import '../../../infrastructure/delivery_address/delivery_address.dart';
 import '../../../domain/models/shopping_address.dart';

@@ -1,10 +1,10 @@
-import 'package:artopsy/bloc/follow_following/follow/follow_bloc.dart';
+import 'package:artopsy/application/follow_following/follow/follow_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../bloc/artwork/post_artwork/post_artwork_bloc.dart';
-import '../../bloc/follow_following/visiting_follow/visiting_follow_bloc.dart';
+import '../../application/artwork/post_artwork/post_artwork_bloc.dart';
+import '../../application/follow_following/visiting_follow/visiting_follow_bloc.dart';
 
 void emptiest() {}
 

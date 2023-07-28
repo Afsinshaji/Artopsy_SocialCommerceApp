@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:artopsy/bloc/follow_following/check_follow/check_follow_bloc.dart';
+import 'package:artopsy/application/follow_following/check_follow/check_follow_bloc.dart';
 import 'package:artopsy/infrastructure/follow_following/follow.dart';
 import 'package:artopsy/presentation/screens/visitingprofile/screen_visiting_profile.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../bloc/users/all_users/all_users_bloc.dart';
+import '../../../../application/users/all_users/all_users_bloc.dart';
 import '../../../../core/colors/colors.dart';
 import '../../../../core/constants/constants.dart';
 import '../../../../domain/models/user_profile.dart';

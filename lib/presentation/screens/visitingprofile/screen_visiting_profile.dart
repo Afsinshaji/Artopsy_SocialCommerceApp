@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../bloc/users/visiting_user/visiting_user_bloc.dart';
+import '../../../application/users/visiting_user/visiting_user_bloc.dart';
 import '../../../core/colors/colors.dart';
 import '../../../core/constants/constants.dart';
 import '../../common_widgets/circular_icon_button.dart';

@@ -1,11 +1,11 @@
-import 'package:artopsy/bloc/delivery_bottom_sheet/delivery_bottom_sheet_bloc.dart';
+import 'package:artopsy/application/delivery_bottom_sheet/delivery_bottom_sheet_bloc.dart';
 import 'package:artopsy/core/constants/constants.dart';
 import 'package:artopsy/domain/models/shopping_address.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../bloc/delivery_address/delivery_address_bloc.dart';
+import '../../../../../application/delivery_address/delivery_address_bloc.dart';
 import '../../../../../core/colors/colors.dart';
 import '../../../delivery_address/screen_add_delivery_address.dart';
 

@@ -7,7 +7,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../bloc/my_cart/my_cart_bloc.dart';
+import '../../../../application/my_cart/my_cart_bloc.dart';
 import '../../../../core/colors/colors.dart';
 import '../../../../domain/models/artwork_details.dart';
 import '../delivery_address/sreen_delivery_address.dart';

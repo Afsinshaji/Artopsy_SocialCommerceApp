@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:artopsy/bloc/favourites/favourites_bloc.dart';
+import 'package:artopsy/application/favourites/favourites_bloc.dart';
 import 'package:artopsy/presentation/screens/artwork/screen_artwork.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/cupertino.dart';

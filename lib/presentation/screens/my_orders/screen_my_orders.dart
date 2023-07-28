@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:artopsy/bloc/order/order_bloc.dart';
+import 'package:artopsy/application/order/order_bloc.dart';
 import 'package:artopsy/domain/models/order.dart';
 import 'package:artopsy/presentation/screens/my_orders/screen_each_order.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,8 +9,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../bloc/artwork/complete_artwork/complete_artwork_bloc.dart';
-import '../../../bloc/artwork/post_artwork/post_artwork_bloc.dart';
+import '../../../application/artwork/complete_artwork/complete_artwork_bloc.dart';
+import '../../../application/artwork/post_artwork/post_artwork_bloc.dart';
 import '../../../core/colors/colors.dart';
 import '../../../core/constants/constants.dart';
 import '../../../infrastructure/order/order.dart';

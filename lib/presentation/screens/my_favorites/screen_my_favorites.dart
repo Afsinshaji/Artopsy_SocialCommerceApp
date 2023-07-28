@@ -1,11 +1,11 @@
 import 'dart:developer';
 
-import 'package:artopsy/bloc/favourites/favourites_bloc.dart';
+import 'package:artopsy/application/favourites/favourites_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-import '../../../bloc/artwork/post_artwork/post_artwork_bloc.dart';
+import '../../../application/artwork/post_artwork/post_artwork_bloc.dart';
 import '../../../core/colors/colors.dart';
 import '../../../domain/models/artwork_details.dart';
 import '../../common_widgets/artwork_list_widget.dart';

@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:razorpay_flutter/razorpay_flutter.dart';
 
-import '../../../bloc/users/user/user_bloc.dart';
+import '../../../application/users/user/user_bloc.dart';
 import '../../../core/constants/constants.dart';
 import '../../../infrastructure/wallet/wallet.dart';
 import '../../common_widgets/alert_box.dart';

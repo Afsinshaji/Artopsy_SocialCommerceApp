@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:artopsy/bloc/artwork/post_artwork/post_artwork_bloc.dart';
+import 'package:artopsy/application/artwork/post_artwork/post_artwork_bloc.dart';
 import 'package:artopsy/core/constants/constants.dart';
 import 'package:artopsy/domain/models/artwork_details.dart';
 import 'package:artopsy/presentation/common_widgets/circular_icon_button.dart';

@@ -1,29 +1,29 @@
-import 'package:artopsy/bloc/delivery_address/delivery_address_bloc.dart';
+import 'package:artopsy/application/delivery_address/delivery_address_bloc.dart';
 import 'package:artopsy/presentation/screens/splash/screen_splash.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 
-import 'bloc/artwork/complete_artwork/complete_artwork_bloc.dart';
-import 'bloc/artwork/post_artwork/post_artwork_bloc.dart';
-import 'bloc/chat/chat_bloc.dart';
+import 'application/artwork/complete_artwork/complete_artwork_bloc.dart';
+import 'application/artwork/post_artwork/post_artwork_bloc.dart';
+import 'application/chat/chat_bloc.dart';
 
-import 'bloc/delivery_bottom_sheet/delivery_bottom_sheet_bloc.dart';
-import 'bloc/dropdown_button/dropdown_button_bloc.dart';
-import 'bloc/favourites/favourites_bloc.dart';
+import 'application/delivery_bottom_sheet/delivery_bottom_sheet_bloc.dart';
+import 'application/dropdown_button/dropdown_button_bloc.dart';
+import 'application/favourites/favourites_bloc.dart';
 
-import 'bloc/follow_following/check_follow/check_follow_bloc.dart';
-import 'bloc/follow_following/follow/follow_bloc.dart';
-import 'bloc/my_cart/my_cart_bloc.dart';
-import 'bloc/order/order_bloc.dart';
+import 'application/follow_following/check_follow/check_follow_bloc.dart';
+import 'application/follow_following/follow/follow_bloc.dart';
+import 'application/my_cart/my_cart_bloc.dart';
+import 'application/order/order_bloc.dart';
 
-import 'bloc/sales/sales_bloc.dart';
+import 'application/sales/sales_bloc.dart';
 
-import 'bloc/follow_following/visiting_follow/visiting_follow_bloc.dart';
-import 'bloc/users/all_users/all_users_bloc.dart';
-import 'bloc/users/user/user_bloc.dart';
-import 'bloc/users/visiting_user/visiting_user_bloc.dart';
+import 'application/follow_following/visiting_follow/visiting_follow_bloc.dart';
+import 'application/users/all_users/all_users_bloc.dart';
+import 'application/users/user/user_bloc.dart';
+import 'application/users/visiting_user/visiting_user_bloc.dart';
 import 'infrastructure/complete_artworks/complete_artwork_repository.dart';
 
 

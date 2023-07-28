@@ -1,4 +1,4 @@
-import 'package:artopsy/bloc/order/order_bloc.dart';
+import 'package:artopsy/application/order/order_bloc.dart';
 import 'package:artopsy/core/constants/constants.dart';
 import 'package:artopsy/presentation/common_widgets/alert_box.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,9 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../bloc/users/all_users/all_users_bloc.dart';
-import '../../../bloc/artwork/post_artwork/post_artwork_bloc.dart';
-import '../../../bloc/sales/sales_bloc.dart';
+import '../../../application/users/all_users/all_users_bloc.dart';
+import '../../../application/artwork/post_artwork/post_artwork_bloc.dart';
+import '../../../application/sales/sales_bloc.dart';
 import '../../../core/colors/colors.dart';
 
 import '../../../domain/models/artwork_details.dart';

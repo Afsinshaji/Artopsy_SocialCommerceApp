@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../bloc/artwork/post_artwork/post_artwork_bloc.dart';
+import '../../../application/artwork/post_artwork/post_artwork_bloc.dart';
 import '../../../core/constants/constants.dart';
 import '../../../domain/models/artwork_details.dart';
 import '../artwork/screen_artwork.dart';

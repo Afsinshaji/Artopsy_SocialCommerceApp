@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../bloc/users/all_users/all_users_bloc.dart';
-import '../../../bloc/follow_following/follow/follow_bloc.dart';
+import '../../../application/users/all_users/all_users_bloc.dart';
+import '../../../application/follow_following/follow/follow_bloc.dart';
 import '../../../core/constants/constants.dart';
 import '../../../domain/models/user_profile.dart';
 import '../../common_widgets/circular_profile_picture.dart';
