@@ -17,7 +17,7 @@ class AuthenticationPageLogo extends StatelessWidget {
         ImageBox(
           height: height * 1 / 6,
           width: width,
-          image: 'lib/assets/images/artopsy-logo (1) 1.png',
+          image: 'assets/images/artopsy-logo (1) 1.png',
           borderradius: 15,
         ),
       ],

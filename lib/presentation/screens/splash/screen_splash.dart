@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
       body: ImageBox(
         height: height,
         width: width,
-        image: 'lib/assets/images/Picsart_23-06-08_14-41-25-865.jpg',
+        image: 'assets/images/Picsart_23-06-08_14-41-25-865.jpg',
         borderradius: 0,
         boxFit: BoxFit.fill,
       ),
