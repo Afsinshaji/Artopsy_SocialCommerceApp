@@ -1,10 +1,11 @@
 import 'package:artopsy/presentation/screens/search/widget/background_wave.dart';
 import 'package:flutter/material.dart';
 
-import 'Search_screen_bar.dart';
+import 'search_screen_bar.dart';
 
 class SilverSearchAppbar extends SliverPersistentHeaderDelegate {
-  const SilverSearchAppbar();
+  const SilverSearchAppbar({required this.searchList});
+  final List<String> searchList;
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
@@ -22,7 +23,7 @@ class SilverSearchAppbar extends SliverPersistentHeaderDelegate {
             top: topPadding + offset,
             left: 16,
             right: 16,
-            child: const SearchScreenBar())
+            child:  SearchScreenBar(searchList: searchList,))
       ],
     );
   }

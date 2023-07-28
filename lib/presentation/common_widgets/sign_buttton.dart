@@ -3,15 +3,22 @@ import 'package:flutter/material.dart';
 import '../../core/colors/colors.dart';
 
 class SignButton extends StatelessWidget {
-  const SignButton(
-      {super.key,
-      required this.onTap,
-      required this.width,
-      required this.text});
+  const SignButton({
+    super.key,
+    required this.onTap,
+    required this.width,
+    required this.text,
+    this.changeColor = kBlackColor,
+    this.backGroundColor = kWhiteColor,
+    this.textColor = kBlackColor,
+  });
 
   final dynamic width;
   final Function onTap;
   final String text;
+  final Color changeColor;
+  final Color backGroundColor;
+  final Color textColor;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,17 +33,17 @@ class SignButton extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith((states) {
             if (states.contains(MaterialState.pressed)) {
-              return kBlackColor;
+              return changeColor;
             }
-            return kWhiteColor;
+            return backGroundColor;
           }),
           shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
         ),
         child: Text(
           text,
-          style: const TextStyle(
-            color: kBlackColor,
+          style:  TextStyle(
+            color: textColor,
             fontWeight: FontWeight.bold,
             fontSize: 16,
           ),

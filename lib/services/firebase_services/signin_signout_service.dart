@@ -6,7 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 class FirebaseSignService {
   final auth = FirebaseAuth.instance;
   final googleSignin = GoogleSignIn();
-  signInWithGoogle() async {
+ Future<List<String?>> signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleSignInAccount =
           await googleSignin.signIn();
@@ -19,6 +19,7 @@ class FirebaseSignService {
             idToken: googleSignInAuthentication.idToken);
         await auth.signInWithCredential(authCredential);
       }
+      return [googleSignInAccount!.displayName,googleSignInAccount.email];
     } on FirebaseAuthException catch (e) {
       log(e.message!);
       rethrow;

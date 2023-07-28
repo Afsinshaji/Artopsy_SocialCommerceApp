@@ -18,8 +18,7 @@ class WelcomeScreen extends StatelessWidget {
     width = size.width;
 
     return Scaffold(
-      body: SafeArea(
-          child: Container(
+      body: Container(
         padding: const EdgeInsets.all(10),
         alignment: Alignment.center,
         height: height,
@@ -55,15 +54,14 @@ class WelcomeScreen extends StatelessWidget {
                     color: kWhiteColor,
                     fontWeight: FontWeight.w500,
                   ),
-                )
-                ),
+                )),
             kHeight100,
             SignButton(
                 onTap: () {
                   Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
-                      builder: (context) =>  HomePageScreen(),
+                      builder: (context) =>const HomePageScreen(),
                     ),
                     (route) => false,
                   );
@@ -72,7 +70,7 @@ class WelcomeScreen extends StatelessWidget {
                 text: "Let's Start")
           ],
         ),
-      )),
+      ),
     );
   }
 }

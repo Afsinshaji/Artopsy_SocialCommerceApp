@@ -1,10 +1,10 @@
 import 'dart:async';
 
+import 'package:artopsy/presentation/screens/homepage/screen_homepage.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../common_widgets/image_box.dart';
-import '../addartwork/screen_addartwork.dart';
 import '../authentication/login/screen_login.dart';
 
 // import '../myprofile/screen_myprofile.dart';
@@ -31,17 +31,19 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void navigateUser() async {
     if (FirebaseAuth.instance.currentUser != null) {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const AddArtworkScreen(),
-          ));
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomePageScreen(),
+        ),
+      );
     } else {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => LoginScreen(),
-          ));
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => LoginScreen(),
+        ),
+      );
     }
   }
 
@@ -52,13 +54,13 @@ class _SplashScreenState extends State<SplashScreen> {
     height = size.height;
     width = size.width;
     return Scaffold(
-      body: SafeArea(
-          child: ImageBox(
+      body: ImageBox(
         height: height,
         width: width,
-        image: 'lib/assets/images/Android Large - 1.png',
+        image: 'lib/assets/images/Picsart_23-06-08_14-41-25-865.jpg',
         borderradius: 0,
-      )),
+        boxFit: BoxFit.fill,
+      ),
     );
   }
 }

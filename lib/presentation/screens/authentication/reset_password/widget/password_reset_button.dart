@@ -1,12 +1,19 @@
+import 'dart:developer';
+
 import 'package:artopsy/presentation/screens/authentication/login/screen_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/colors/colors.dart';
+import '../../../../common_widgets/alert_box.dart';
 
 class PasswordResetButton extends StatelessWidget {
   const PasswordResetButton(
-      {super.key, required this.width, required this.email,required this.formKey});
+      {super.key,
+      required this.width,
+      required this.email,
+      required this.formKey});
 
   final dynamic width;
   final String email;
@@ -20,14 +27,24 @@ class PasswordResetButton extends StatelessWidget {
       margin: const EdgeInsets.fromLTRB(0, 10, 0, 20),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
       child: ElevatedButton(
-        onPressed: () {
+        onPressed: ()async {
+       
           if (formKey.currentState!.validate()) {
-            FirebaseAuth.instance.sendPasswordResetEmail(email: email);
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => LoginScreen(),
-                ));
+          
+            log(email);
+           await FirebaseAuth.instance
+                .sendPasswordResetEmail(email: email)
+                .then((value) {
+              alertSnackbar(context, 'Check Your Email');
+              Navigator.pushReplacement(
+                  context,
+                CupertinoPageRoute(
+                    builder: (context) => LoginScreen(),
+                  ));
+            }).onError((error, stackTrace) {
+              alertSnackbar(context, 'Error: ${error.toString()}');
+              log('Error: ${error.toString()}');
+            });
           }
         },
         style: ButtonStyle(

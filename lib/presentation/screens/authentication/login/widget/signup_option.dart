@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 import '../../../../../core/colors/colors.dart';
 import '../../signup/screen_signup.dart';
@@ -23,7 +23,7 @@ class SignupOption extends StatelessWidget {
           onTap: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(
+              CupertinoPageRoute(
                 builder: (context) => SignupScreen(),
               ),
             );

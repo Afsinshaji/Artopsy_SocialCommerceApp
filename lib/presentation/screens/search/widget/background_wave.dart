@@ -22,18 +22,19 @@ class BackgroundWave extends StatelessWidget {
             ]),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(31.0),
-            child: Text(
-              'Artopsy',
-              style: GoogleFonts.dancingScript(
-                textStyle: const TextStyle(
-                  letterSpacing: .5,
-                  fontSize: 46,
-                  color: kBlackColor,
-                  fontWeight: FontWeight.w400,
+            padding: const EdgeInsets.symmetric(horizontal:18.0,vertical:31),
+            child:  Text(
+                'Artopsy',
+                style: GoogleFonts.dancingScript(
+                  textStyle: const TextStyle(
+                    letterSpacing: .5,
+                    fontSize: 46,
+                    color: kBlackColor,
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
               ),
-            ),
+            
           ),
         ),
       ),

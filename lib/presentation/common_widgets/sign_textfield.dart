@@ -12,6 +12,7 @@ class SignTextField extends StatefulWidget {
     this.isTextEmailType = false,
     this.isTextPasswordConfirmType = false,
     this.enteredPassword = '',
+    this.floatingLabelBehavior = FloatingLabelBehavior.never,
   });
 
   final TextEditingController controller;
@@ -21,6 +22,7 @@ class SignTextField extends StatefulWidget {
   final bool isTextEmailType;
   final bool isTextPasswordConfirmType;
   final String enteredPassword;
+  final FloatingLabelBehavior floatingLabelBehavior;
 
   @override
   State<SignTextField> createState() => _SignTextFieldState();
@@ -43,7 +45,7 @@ class _SignTextFieldState extends State<SignTextField> {
       borderRadius: BorderRadius.circular(15),
       child: TextFormField(
         controller: widget.controller,
-        obscureText: isVisible,
+        obscureText: widget.isTextPasswordType ? isVisible : false,
         enableSuggestions: !widget.isTextPasswordType,
         autocorrect: !widget.isTextPasswordType,
         cursorColor: kBlackColor,
@@ -66,9 +68,11 @@ class _SignTextFieldState extends State<SignTextField> {
               color: kBlackColor,
             ),
             labelText: widget.text,
-            labelStyle: TextStyle(color: kBlackColor.withOpacity(0.9)),
+            labelStyle: TextStyle(
+              color: kBlackColor.withOpacity(0.9),
+            ),
             filled: true,
-            floatingLabelBehavior: FloatingLabelBehavior.never,
+            floatingLabelBehavior: widget.floatingLabelBehavior,
             fillColor: kWhiteColor,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(30.0),
@@ -86,12 +90,12 @@ class _SignTextFieldState extends State<SignTextField> {
                   .hasMatch(text)) {
             return 'Enter a valid Email';
           }
-          if (widget.isTextPasswordType && text.length < 6) {
-            return 'Enter a valid Password';
-          }
           if (widget.isTextPasswordConfirmType &&
               text != widget.enteredPassword) {
             return "password doesn't match";
+          }
+          if (widget.isTextPasswordType && text.length < 6) {
+            return 'Minimum password length is 6';
           }
 
           return null;

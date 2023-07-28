@@ -1,5 +1,5 @@
 import 'package:artopsy/presentation/screens/authentication/login/screen_login.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 import '../../../../../core/colors/colors.dart';
 
@@ -23,7 +23,8 @@ class LoginOption extends StatelessWidget {
           onTap: () {
             Navigator.pushAndRemoveUntil(
               context,
-              MaterialPageRoute(
+              CupertinoPageRoute(
+              //  settings: CupertinoPage(child: ),
                 builder: (context) => LoginScreen(),
               ),
               (route) => false,

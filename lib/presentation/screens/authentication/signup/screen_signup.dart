@@ -1,16 +1,19 @@
 import 'dart:developer';
 
 import 'package:artopsy/core/colors/colors.dart';
+import 'package:artopsy/infrastructure/users/add_user_name.dart';
 import 'package:artopsy/presentation/common_widgets/authentication_page_logo.dart';
 import 'package:artopsy/presentation/screens/authentication/signup/widget/login_option.dart';
 import 'package:artopsy/presentation/screens/authentication/signup/widget/signup_text_before_field.dart';
 
 import 'package:artopsy/presentation/screens/welcomepage/screen_welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/constants.dart';
+import '../../../common_widgets/alert_box.dart';
 import '../../../common_widgets/sign_buttton.dart';
 import '../../../common_widgets/sign_textfield.dart';
 
@@ -53,6 +56,7 @@ class SignupScreen extends StatelessWidget {
                     text: "Enter Full name",
                     icon: Icons.person_2_outlined,
                     isTextPasswordType: false,
+                    floatingLabelBehavior: FloatingLabelBehavior.auto,
                   ),
                   kHeight20,
                   SignTextField(
@@ -61,6 +65,7 @@ class SignupScreen extends StatelessWidget {
                     icon: Icons.person_2_outlined,
                     isTextPasswordType: false,
                     isTextEmailType: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.auto,
                   ),
                   kHeight20,
                   SignTextField(
@@ -68,6 +73,7 @@ class SignupScreen extends StatelessWidget {
                     text: "Enter password",
                     icon: Icons.lock_outline,
                     isTextPasswordType: true,
+                    floatingLabelBehavior: FloatingLabelBehavior.auto,
                   ),
                   kHeight20,
                   SignTextField(
@@ -77,6 +83,7 @@ class SignupScreen extends StatelessWidget {
                     isTextPasswordType: true,
                     isTextPasswordConfirmType: true,
                     enteredPassword: passwordTextController.text,
+                    floatingLabelBehavior: FloatingLabelBehavior.auto,
                   ),
                   kHeight40,
                   SignButton(
@@ -89,14 +96,19 @@ class SignupScreen extends StatelessWidget {
                             password: passwordTextController.text,
                           )
                               .then((value) {
+                            addUserName(fullNameTextController.text,emailTextController.text);
                             Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(
+                              CupertinoPageRoute(
                                 builder: (context) => const WelcomeScreen(),
                               ),
                               (route) => false,
-                            ).onError(
-                                (error, stackTrace) => {log(error.toString())});
+                            );
+                          }).onError((error, stackTrace) {
+                            alertSnackbar(
+                                context, 'Error: ${error.toString()}');
+
+                            log(error.toString());
                           });
                         }
                       },

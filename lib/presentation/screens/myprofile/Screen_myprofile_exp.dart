@@ -1,3 +1,5 @@
+
+
 import 'package:artopsy/presentation/screens/myprofile/widgets/followers_following_card.dart';
 import 'package:artopsy/presentation/screens/myprofile/widgets/myprofile_button_row.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,7 @@ class MyProfileexp extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+     
       body: CustomScrollView(
         slivers: [
           SliverPersistentHeader(
@@ -56,7 +59,7 @@ class MyProfileSliverStack extends SliverPersistentHeaderDelegate {
           ],
         ),
         const Positioned(
-            top: 210, right: 40, left: 40, child: FollowersFollowingCard()),
+            top: 210, right: 40, left: 40, child: FollowersFollowingCard(isvisiting: false,userName: '',)),
         Positioned(
           top: 160,
           right: 0,
@@ -77,11 +80,11 @@ class MyProfileSliverStack extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  // TODO: implement maxExtent
+
   double get maxExtent => size.height / 3 + 100;
 
   @override
-  // TODO: implement minExtent
+
   double get minExtent => kToolbarHeight;
 
   @override

@@ -6,6 +6,7 @@ class CircularIconButton extends StatelessWidget {
   final Color buttonBackgroundColor;
   final Color iconColor;
   final Function onTap;
+  final double radius;
   const CircularIconButton({
     super.key,
     required this.icon,
@@ -13,6 +14,7 @@ class CircularIconButton extends StatelessWidget {
     required this.buttonBackgroundColor,
     required this.iconColor,
     required this.onTap,
+    this.radius = 20.0,
   });
 
   @override
@@ -22,9 +24,10 @@ class CircularIconButton extends StatelessWidget {
         onTap();
       },
       child: CircleAvatar(
+        radius: radius,
         backgroundColor: buttonBackgroundColor,
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(0),
           child: Icon(
             icon,
             size: iconSize,

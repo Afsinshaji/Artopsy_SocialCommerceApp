@@ -1,9 +1,18 @@
 import 'package:artopsy/core/colors/colors.dart';
+import 'package:artopsy/presentation/screens/search/screen_search.dart';
 import 'package:flutter/material.dart';
 
-class SearchScreenBar extends StatelessWidget {
-  const SearchScreenBar({super.key});
+class SearchScreenBar extends StatefulWidget {
+  const SearchScreenBar({super.key, required this.searchList});
+
+  final List<String> searchList;
+  @override
+  State<SearchScreenBar> createState() => _SearchScreenBarState();
+}
+
+class _SearchScreenBarState extends State<SearchScreenBar> {
   final pink = const Color(0xFFFACCCC);
+
   final grey = const Color(0xFFF2F2F7);
 
   @override
@@ -24,9 +33,17 @@ class SearchScreenBar extends StatelessWidget {
               Icons.search,
               color: Colors.grey,
             )),
-        onFieldSubmitted: (value) {},
+        onChanged: (value) {
+          search(value);
+        },
       ),
     );
+  }
+
+  search(String value) {
+    setState(() {
+      ScreenSearch.searchingArt.value = value;
+    });
   }
 
   OutlineInputBorder _border(Color color) => OutlineInputBorder(

@@ -60,7 +60,7 @@ class HomePageScreen1State extends State<HomePageScreen1>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(200), child: HalfCircleAppBar()),
       // body: SafeArea(
@@ -142,11 +142,13 @@ class SpinningAppBarState extends State<SpinningAppBar>
 }
 
 class SpinningAppBar2 extends StatefulWidget {
+  const SpinningAppBar2({super.key});
+
   @override
-  _SpinningAppBar2State createState() => _SpinningAppBar2State();
+  SpinningAppBar2State createState() => SpinningAppBar2State();
 }
 
-class _SpinningAppBar2State extends State<SpinningAppBar2>
+class SpinningAppBar2State extends State<SpinningAppBar2>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
@@ -170,18 +172,20 @@ class _SpinningAppBar2State extends State<SpinningAppBar2>
     return AppBar(
       title: RotationTransition(
         turns: Tween(begin: 0.0, end: 1.0).animate(_animationController),
-        child: Text('Spinning AppBar'),
+        child: const Text('Spinning AppBar'),
       ),
     );
   }
 }
 
 class SpinningAppBar3 extends StatefulWidget {
+  const SpinningAppBar3({super.key});
+
   @override
-  _SpinningAppBar3State createState() => _SpinningAppBar3State();
+  SpinningAppBar3State createState() => SpinningAppBar3State();
 }
 
-class _SpinningAppBar3State extends State<SpinningAppBar3>
+class SpinningAppBar3State extends State<SpinningAppBar3>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
@@ -206,13 +210,13 @@ class _SpinningAppBar3State extends State<SpinningAppBar3>
       title: Container(
         width: 50.0,
         height: 50.0,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           shape: BoxShape.circle,
           color: Colors.white,
         ),
         child: RotationTransition(
           turns: Tween(begin: 0.0, end: 1.0).animate(_animationController),
-          child: Icon(
+          child: const Icon(
             Icons.refresh,
             color: Colors.blue,
           ),
@@ -223,11 +227,13 @@ class _SpinningAppBar3State extends State<SpinningAppBar3>
 }
 
 class SpinningAppBar4 extends StatefulWidget {
+  const SpinningAppBar4({super.key});
+
   @override
-  _SpinningAppBar4State createState() => _SpinningAppBar4State();
+  SpinningAppBar4State createState() => SpinningAppBar4State();
 }
 
-class _SpinningAppBar4State extends State<SpinningAppBar4>
+class SpinningAppBar4State extends State<SpinningAppBar4>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
@@ -256,45 +262,43 @@ class _SpinningAppBar4State extends State<SpinningAppBar4>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: GestureDetector(
-        onTapDown: (_) => _startAnimation(),
-        onTapUp: (_) => _stopAnimation(),
-        onTapCancel: () => _stopAnimation(),
-        child: RotationTransition(
-          turns: Tween(begin: 0.0, end: 10.0).animate(_animationController),
-          child: Container(
-            child: Stack(
-              children: [
-                Icon(
-                  Icons.pedal_bike,
-                  size: 100,
-                  color: Colors.blue,
-                ),
-                Positioned(
-                    left: 150,
-                    top: 50,
-                    child: Icon(
-                      Icons.pedal_bike,
-                      size: 70,
-                      color: Colors.blue,
-                    )),
-                Positioned(
-                    left: 50,
-                    top: 140,
-                    child: Icon(
-                      Icons.pedal_bike,
-                      size: 70,
-                      color: Colors.blue,
-                    ))
-              ],
-            ),
-            width: 200.0,
-            height: 200.0,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.black,
-            ),
+    return GestureDetector(
+      onTapDown: (_) => _startAnimation(),
+      onTapUp: (_) => _stopAnimation(),
+      onTapCancel: () => _stopAnimation(),
+      child: RotationTransition(
+        turns: Tween(begin: 0.0, end: 10.0).animate(_animationController),
+        child: Container(
+          width: 200.0,
+          height: 200.0,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.black,
+          ),
+          child: const Stack(
+            children: [
+              Icon(
+                Icons.pedal_bike,
+                size: 100,
+                color: Colors.blue,
+              ),
+              Positioned(
+                  left: 150,
+                  top: 50,
+                  child: Icon(
+                    Icons.pedal_bike,
+                    size: 70,
+                    color: Colors.blue,
+                  )),
+              Positioned(
+                  left: 50,
+                  top: 140,
+                  child: Icon(
+                    Icons.pedal_bike,
+                    size: 70,
+                    color: Colors.blue,
+                  ))
+            ],
           ),
         ),
       ),
@@ -303,15 +307,17 @@ class _SpinningAppBar4State extends State<SpinningAppBar4>
 }
 
 class HalfCircleAppBar extends StatefulWidget {
+  const HalfCircleAppBar({super.key});
+
   @override
-  _HalfCircleAppBarState createState() => _HalfCircleAppBarState();
+  HalfCircleAppBarState createState() => HalfCircleAppBarState();
 }
 
-class _HalfCircleAppBarState extends State<HalfCircleAppBar>
+class HalfCircleAppBarState extends State<HalfCircleAppBar>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
 
-  List<IconData> _icons = [
+  final List<IconData> _icons = [
     Icons.home,
     Icons.search,
     Icons.notifications,
@@ -323,7 +329,7 @@ class _HalfCircleAppBarState extends State<HalfCircleAppBar>
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     );
   }
@@ -344,10 +350,10 @@ class _HalfCircleAppBarState extends State<HalfCircleAppBar>
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
-      preferredSize: Size.fromHeight(80),
+      preferredSize: const Size.fromHeight(80),
       child: AppBar(
         flexibleSpace: Padding(
-          padding: EdgeInsets.only(bottom: 8.0),
+          padding: const EdgeInsets.only(bottom: 8.0),
           child: LayoutBuilder(
             builder: (context, constraints) {
               double appBarWidth = constraints.maxWidth;

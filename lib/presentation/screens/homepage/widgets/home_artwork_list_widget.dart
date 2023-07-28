@@ -8,12 +8,16 @@ import '../../../../core/constants/constants.dart';
 class HomeArtWorkListWidget extends StatelessWidget {
   final int index;
   const HomeArtWorkListWidget({super.key, required this.index});
+  
 
   @override
   Widget build(BuildContext context) {
+    
     return Column(
       children: [
+        
         ClipRRect(
+
           borderRadius: BorderRadius.circular(15),
           child: Image.network(artworkImageList[index]),
         ),

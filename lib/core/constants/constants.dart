@@ -1,10 +1,45 @@
 import 'package:flutter/material.dart';
 
+import '../../domain/models/artwork_details.dart';
+
+final ArtworkDetails nullArtworkConstant = ArtworkDetails(
+  isSold: false,
+  userId: '',
+  artworkId: '',
+    title: '',
+    desctription: '',
+    artist: '',
+    category: '',
+    yearOfCreation: '',
+    height: '',
+    width: '',
+    depth: '',
+    price: '',
+    imageUrl: '');
+
 const kWidth = SizedBox(
   width: 10,
 );
 const kWidth20 = SizedBox(
   width: 20,
+);
+const kWidth30 = SizedBox(
+  width: 30,
+);
+const kWidth40 = SizedBox(
+  width: 40,
+);
+const kWidth50 = SizedBox(
+  width: 50,
+);
+const kWidth60 = SizedBox(
+  width: 60,
+);
+const kWidth100 = SizedBox(
+  width: 100,
+);
+const kWidth150 = SizedBox(
+  width: 150,
 );
 const kHeight = SizedBox(
   height: 10,
@@ -24,7 +59,6 @@ const kHeight50 = SizedBox(
 const kHeight100 = SizedBox(
   height: 100,
 );
-
 
 final artworkImageList = [
   "https://www.axeducation.com/wp-content/uploads/2019/01/WechatIMG491-600x712.jpeg",

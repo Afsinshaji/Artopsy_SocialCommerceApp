@@ -7,9 +7,11 @@ import 'package:artopsy/presentation/screens/authentication/login/widget/signup_
 import 'package:artopsy/presentation/screens/authentication/login/widget/text_before_field.dart';
 import 'package:artopsy/presentation/screens/welcomepage/screen_welcome.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../../core/colors/colors.dart';
 import '../../../../core/constants/constants.dart';
+import '../../../common_widgets/alert_box.dart';
 import '../../../common_widgets/authentication_page_logo.dart';
 import '../../../common_widgets/sign_buttton.dart';
 import '../../../common_widgets/sign_textfield.dart';
@@ -68,6 +70,12 @@ class LoginScreen extends StatelessWidget {
                       text: "LOG IN",
                       onTap: () {
                         if (formKey.currentState!.validate()) {
+                          // BlocProvider.of<AuthenticationBloc>(context).add(
+                          //     login(
+                          //         email: emailTextController.text,
+                          //         password: passwordTextController.text,
+                          //         context: context));
+
                           FirebaseAuth.instance
                               .signInWithEmailAndPassword(
                             email: emailTextController.text,
@@ -76,12 +84,15 @@ class LoginScreen extends StatelessWidget {
                               .then((value) {
                             Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(
+                              CupertinoPageRoute(
                                 builder: (context) => const WelcomeScreen(),
                               ),
                               (route) => false,
-                            ).onError(
-                                (error, stackTrace) => {log(error.toString())});
+                            );
+                          }).onError((error, stackTrace) {
+                            alertSnackbar(
+                                context, 'Error: ${error.toString()}');
+                            log(error.toString());
                           });
                         }
                       },
