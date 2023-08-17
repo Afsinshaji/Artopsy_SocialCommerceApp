@@ -4,7 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import 'application/artwork/complete_artwork/complete_artwork_bloc.dart';
 import 'application/artwork/post_artwork/post_artwork_bloc.dart';
 import 'application/chat/chat_bloc.dart';
@@ -25,17 +24,27 @@ import 'application/users/all_users/all_users_bloc.dart';
 import 'application/users/user/user_bloc.dart';
 import 'application/users/visiting_user/visiting_user_bloc.dart';
 import 'infrastructure/complete_artworks/complete_artwork_repository.dart';
-
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'dart:ui';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  // Pass all uncaught "fatal" errors from the framework to Crashlytics
+
+  FlutterError.onError = (errorDetails) {
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  
 
   @override
   Widget build(BuildContext context) {
@@ -78,20 +87,18 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => ChatBloc(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (context) => AllUsersBloc(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (context) => CheckFollowBloc(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (context) => VisitingFollowBloc(),
         ),
-         BlocProvider(
+        BlocProvider(
           create: (context) => VisitingUserBloc(),
         ),
-
-     
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -37,6 +37,7 @@ dependencies:
   dartz: ^0.10.1
   firebase_auth: ^4.6.1
   firebase_core: ^2.13.0
+  firebase_crashlytics: ^3.3.5
   firebase_storage: ^11.2.3
   flutter:
     sdk: flutter
