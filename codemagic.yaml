@@ -1,16 +1,12 @@
 workflows:
   android-workflow:
     name: Android Workflow
-    instance_type: mac_mini_m1
+    instance_type: linux
     max_build_duration: 120
     environment:
       android_signing:
         - keystore_reference
-      groups:
-        - google_play # <-- (Includes GCLOUD_SERVICE_ACCOUNT_CREDENTIALS)
-      vars:
-        PACKAGE_NAME: "io.codemagic.flutteryaml" # <-- Put your package name here
-        GOOGLE_PLAY_TRACK: "alpha"
+
       flutter: stable
     scripts:
       - name: Set up local.properties
@@ -39,7 +35,7 @@ workflows:
     publishing:
       email:
         recipients:
-          - user_1@example.com
+          - afsinshaji509@gmail.com
           - user_2@example.com
         notify:
           success: true
