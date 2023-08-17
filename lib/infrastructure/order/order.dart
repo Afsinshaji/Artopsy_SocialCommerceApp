@@ -56,7 +56,12 @@ cancelOrder(ArtworkDetails artwork, String orderId) async {
   artworkIdMap
       .removeWhere((element) => element['artworkId'] == artwork.artworkId);
   orderList[index]['artworkIdMap'] = artworkIdMap;
-  await userCollection.update({'Order': orderList});
+  if (artworkIdMap.isEmpty) {
+    await userCollection.update({'Order': []});
+  } else {
+    await userCollection.update({'Order': orderList});
+  }
+
   // Map a = {'s': 'kkk'};
   // a['s'] = 'jjj';
   // print(a);
@@ -89,5 +94,9 @@ Map<String, List> takingArtworkList(List<Order> orderList) {
       orderedAddress.add(artworkMap.orderedAddress);
     }
   }
-  return {'mapList': mapList, 'orderIdList': orderIdList,'orderedAddress':orderedAddress};
+  return {
+    'mapList': mapList,
+    'orderIdList': orderIdList,
+    'orderedAddress': orderedAddress
+  };
 }

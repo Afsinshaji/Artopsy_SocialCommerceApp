@@ -17,7 +17,7 @@ class _PaymentResultScreenState extends State<PaymentResultScreen> {
   void initState() {
    
     super.initState();
-    Timer(const Duration(seconds: 1), () {
+    Timer(const Duration(seconds: 5), () {
       Navigator.pushReplacement(context, CupertinoPageRoute(builder: (context) => const HomePageScreen(),));
     });
   }
