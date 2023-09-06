@@ -2,10 +2,12 @@ import 'dart:developer';
 
 import 'package:artopsy/presentation/screens/welcomepage/screen_welcome.dart';
 import 'package:artopsy/services/firebase_services/signin_signout_service.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/colors/colors.dart';
 import '../../../../../infrastructure/users/add_user_name.dart';
+import '../../../../../presentation/common_widgets/alert_box.dart';
 
 class GoogleSignupButton extends StatelessWidget {
   const GoogleSignupButton({
@@ -24,21 +26,29 @@ class GoogleSignupButton extends StatelessWidget {
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(90)),
       child: ElevatedButton(
         onPressed: () async {
-          final List<String?> googleName =
-              await FirebaseSignService().signInWithGoogle();
+          final List<String?> googleName = await FirebaseSignService()
+              .signInWithGoogle()
+              .onError((error, stackTrace) {
+            alertSnackbar(context, error.toString());
+            return [];
+          });
           log('hereeee....');
           log(googleName.toString());
-           await addUserName(googleName[0]??='',googleName[1]!).then((value) =>
-
-            Navigator.pushAndRemoveUntil(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const WelcomeScreen(),
+          if (googleName.isNotEmpty) {
+            // ignore: use_build_context_synchronously
+            // Navigator.pushReplacement(
+            //   context,CupertinoPageRoute(builder: (context) => const Center(child: CircularProgressIndicator()),)
+            // );
+            await addUserName(googleName[0] ??= '', googleName[1]!).then(
+              (value) => Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const WelcomeScreen(),
+                ),
+                (route) => false,
               ),
-              (route) => false,
-            )
-
-           ,);
+            );
+          }
         },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith((states) {

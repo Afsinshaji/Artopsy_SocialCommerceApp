@@ -20,8 +20,6 @@ class ArtworkDetailsButtonRow extends StatelessWidget {
   final String selectedValue;
   final ValueNotifier<String> selectedCategory;
 
-
-
   @override
   Widget build(BuildContext context) {
     return Padding(

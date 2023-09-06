@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../../core/colors/colors.dart';
 
-Column loginWelcomeText() {
+Column loginWelcomeText(double width) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       Padding(
-        padding: const EdgeInsets.only(left: 20.0),
+        padding:  EdgeInsets.only(left: width/2-150),
         child: Text(
           'Welcome!',
           style: GoogleFonts.poppins(
@@ -22,7 +22,7 @@ Column loginWelcomeText() {
         ),
       ),
       Padding(
-        padding: const EdgeInsets.only(left: 25.0),
+        padding:  EdgeInsets.only(left: width/2-180),
         child: Text(
           'please login or sign up to continue our app',
           style: GoogleFonts.poppins(

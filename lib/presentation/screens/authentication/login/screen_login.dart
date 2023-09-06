@@ -43,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   AuthenticationPageLogo(height: height, width: width),
                   kHeight20,
-                  loginWelcomeText(),
+                  loginWelcomeText(width),
                   kHeight50,
                   const TextbeforeField(text: 'Email'),
                   SignTextField(
