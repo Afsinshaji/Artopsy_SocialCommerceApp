@@ -1,11 +1,11 @@
 workflows:
   android-workflow:
     name: Android Workflow
-    instance_type: linux
+    instance_type: mac_mini_m1
     max_build_duration: 120
     environment:
       android_signing:
-        - keystore_reference
+        - upload
 
       flutter: stable
     scripts:
@@ -24,10 +24,7 @@ workflows:
         ignore_failure: true
       - name: Build AAB with Flutter
         script: |
-          BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))      
           flutter build appbundle --release \
-            --build-name=1.0.$BUILD_NUMBER \
-            --build-number=$BUILD_NUMBER
     artifacts:
       - build/**/outputs/**/*.aab
       - build/**/outputs/**/mapping.txt
