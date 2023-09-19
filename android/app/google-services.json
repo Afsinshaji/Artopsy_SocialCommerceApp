@@ -7,6 +7,51 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:377430172128:android:7138b6776d6273ad73cb85",
+        "android_client_info": {
+          "package_name": "in.afsin.artopsy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377430172128-iri7jvi0coagk1qkepdfbr32untsskpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.afsin.artopsy",
+            "certificate_hash": "3e63beeca1e4de4db7b458dfbf47804ac67d534a"
+          }
+        },
+        {
+          "client_id": "377430172128-t9e900qi9n8fqcicmtjvptbc4ufeakka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.afsin.artopsy",
+            "certificate_hash": "2ada48ba9b81eb7d853d65a7a2817efe822519a2"
+          }
+        },
+        {
+          "client_id": "377430172128-cm5e1ea07rl88tmfe027rejui0p8cb2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLxbMEbjEXSZjD4iCT7W6tu8Xsa4--1CU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377430172128-cm5e1ea07rl88tmfe027rejui0p8cb2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:377430172128:android:da5f03ec0befd2e073cb85",
         "android_client_info": {
           "package_name": "in.brototype.artopsy"
@@ -19,6 +64,14 @@
           "android_info": {
             "package_name": "in.brototype.artopsy",
             "certificate_hash": "91584b72a074d88f56586317912852aa4d15a693"
+          }
+        },
+        {
+          "client_id": "377430172128-bk6irftutohpgclg6d2o9774g5in9jfl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.brototype.artopsy",
+            "certificate_hash": "3aedc0d1c82406d7eaef05d95f59e4990d324d96"
           }
         },
         {
